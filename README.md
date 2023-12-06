@@ -1,4 +1,4 @@
-# Video Stream Object Detection
+# Object Detection from Video Stream
 
 This is a simple client-server application for object detection.
 
