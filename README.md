@@ -1,6 +1,7 @@
-# Client-Server Object Detection Application
+# Video Stream Object Detection
 
 This is a simple client-server application for object detection.
+
 The server receives a video stream from the client through a websocket, processes it using YOLOv3, and returns the number of detected objects and their respective position for each frame.
 
 ## Requirements
@@ -38,16 +39,17 @@ The server receives a video stream from the client through a websocket, processe
 3. Run the server script.
 
    ```bash
-   python server.py --h <ip> --p <port> --o <object> --conf <conf_thresh> --nms <nms_thresh>
+   python server.py --h <host_ip> --p <host_port> --o <object> --conf <conf_thresh> --nms <nms_thresh>
    ```
 
-- `<ip>`: Host ip (default: 127.0.0.1)
-- `<port>`: Host port (default: 10050)
+- `<host_ip>`: Host ip (default: 127.0.0.1)
+- `<host_port>`: Host port (default: 10050)
 - `<object>`: Object to detect (default: person)
 - `<conf_thresh>`: Confidence threshold (default: 0.6)
 - `<nms_thresh>`: Non maximum suppression threshold (default: 0.3)
 
 The list of available objects can be found at `server/yolo/coco.names`
+
 The server will start listening for incoming connections on the specified port.
 
 #### With Docker
