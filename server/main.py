@@ -9,7 +9,7 @@ from object_detection import detect_objects
 
 DEFAULT_PORT = 10050
 DEFAULT_HOST = "127.0.0.1"
-DEFAULT_CONF_THRESH = 0.7
+DEFAULT_CONF_THRESH = 0.6
 DEFAULT_NMS_THRESH = 0.3
 DEFAULT_OBJ = "person"
 
