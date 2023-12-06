@@ -1,6 +1,7 @@
-# Client-Server People Detection Application
+# Client-Server Object Detection Application
 
-This is a simple client-server application for people detection using YOLOv3. The server receives video frames from clients, processes them using YOLOv3 for people detection, and returns the number of detected people and their respective position back to the clients.
+This is a simple client-server application for object detection.
+The server receives a video stream from the client through a websocket, processes it using YOLOv3, and returns the number of detected objects and their respective position for each frame.
 
 ## Requirements
 
@@ -11,19 +12,21 @@ This is a simple client-server application for people detection using YOLOv3. Th
 - Clone the repo and install the required Python packages.
 
   ```bash
-  git clone https://github.com/PedroDSFerreira/osm-mec.git
-  cd osm-mec/app-demo
+  git clone https://github.com/PedroDSFerreira/video-object-detection.git
+  cd video-object-detection
   pip install -r requirements.txt
   ```
 
 ## Usage
 
-### Server (Without Docker)
+### Server
+
+#### Without Docker
 
 1. Open a terminal and navigate to the server directory.
 
    ```bash
-   cd app-demo/server
+   cd video-object-detection/server
    ```
 
 2. Download the YOLOv3 model files and place them in the `yolo` directory.
@@ -35,32 +38,31 @@ This is a simple client-server application for people detection using YOLOv3. Th
 3. Run the server script.
 
    ```bash
-   python server.py --h <host_ip> --p <port>
+   python server.py --h <ip> --p <port> --o <object> --conf <conf_thresh> --nms <nms_thresh>
    ```
 
+- `<ip>`: Host ip (default: 127.0.0.1)
+- `<port>`: Host port (default: 10050)
+- `<object>`: Object to detect (default: person)
+- `<conf_thresh>`: Confidence threshold (default: 0.6)
+- `<nms_thresh>`: Non maximum suppression threshold (default: 0.3)
+
+The list of available objects can be found at `server/yolo/coco.names`
 The server will start listening for incoming connections on the specified port.
 
-### Server (With Docker)
+#### With Docker
 
-1. Open a terminal and navigate to the server directory.
-
-   ```bash
-   cd app-demo/server
-   ```
-
-2. Build the Docker image.
+1. Pull the Docker image.
 
    ```bash
-   docker build -t people-detection-server .
+   docker pull pedrodsf/object-detection-server
    ```
 
-3. Run the Docker container.
+2. Run the Docker container.
 
    ```bash
-   docker run -p <host_port>:8080 people-detection-server
+   docker run -p <host_port>:8080 object-detection-server
    ```
-
-   Replace `<host_port>` with the desired host port.
 
 ### Client
 
@@ -76,16 +78,13 @@ The server will start listening for incoming connections on the specified port.
    python client.py --h <host_ip> --p <host_port>
    ```
 
-The client will establish a connection with the server and start sending video frames. The server will process each frame and return the number of detected people and positions to the client.
+The client will establish a connection with the server and start sending video frames. The server will process each frame and return the number of detected objects and positions to the client.
 
 ## Configuration
 
 - The YOLO model configuration file (`yolov3.cfg`), weights file (`yolov3.weights`), and class names file (`coco.names`) should be placed in the `yolo` directory.
-- In the 'server/face_detection.py' file, you can customize the people detection parameters:
-  - confidence_thresh: Adjust the confidence threshold for people detection. People with confidence below this threshold will not be counted.
-  - NMS_thresh: Set the Non-Maximum Suppression (NMS) threshold to control the overlap of bounding boxes.
 
-Feel free to experiment with these parameters to optimize people detection based on your specific use case.
+Feel free to experiment with `server/main.py` input parameters to optimize object detection based on your specific use case.
 
 ## Dependencies
 
