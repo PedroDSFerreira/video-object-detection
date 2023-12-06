@@ -63,7 +63,7 @@ The server will start listening for incoming connections on the specified port.
 2. Run the Docker container.
 
    ```bash
-   docker run -p <host_port>:8080 object-detection-server
+   docker run -p <host_port>:8080 pedrodsf/object-detection-server
    ```
 
 ### Client
