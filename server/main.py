@@ -11,6 +11,7 @@ DEFAULT_PORT = 10050
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_CONF_THRESH = 0.7
 DEFAULT_NMS_THRESH = 0.3
+DEFAULT_OBJ = "person"
 
 logging.basicConfig(level=logging.INFO)
 
@@ -102,8 +103,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--o",
         type=str,
-        default="person",
-        help="Object to detect (default: person)",
+        default=DEFAULT_OBJ,
+        help=f"Object to detect (default: {DEFAULT_OBJ})",
     )
     parser.add_argument(
         "--conf",
