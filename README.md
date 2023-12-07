@@ -1,8 +1,12 @@
+<div align="center">
+  <img src="demo.png" align="center" style="width: 50%" />
+</div>
+
 # Object Detection from Video Stream
 
-This is a simple client-server application for object detection.
-
-The server receives a video stream from the client through a websocket, processes it using YOLOv3, and returns the number of detected objects and their respective position for each frame.
+  This is a simple client-server application for object detection.
+  
+  The server receives a video stream from the client through a websocket, processes it using YOLOv3, and returns the number of detected objects and their respective position for each frame.
 
 ## Requirements
 
