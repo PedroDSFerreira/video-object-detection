@@ -50,7 +50,7 @@
 - `<host_port>`: Host port (default: 10050)
 - `<object>`: Object to detect (default: person)
 - `<conf_thresh>`: Confidence threshold (default: 0.6)
-- `<nms_thresh>`: [Non-maximum suppression](https://medium.com/@BH_Chinmay/a-deep-dive-into-non-maximum-suppression-nms-understanding-the-math-behind-object-detection-765ff48392e5#:~:text=Non%2Dmaximum%20suppression%20(NMS),correspond%20to%20the%20detected%20objects.) threshold (default: 0.3)
+- `<nms_thresh>`: [Non-maximum suppression](https://www.tasq.ai/glossary/non-maximum-suppression/) threshold (default: 0.3)
 
 The list of available objects can be found at `server/yolo/coco.names`
 
