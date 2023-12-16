@@ -4,9 +4,9 @@
 
 # Object Detection from Video Stream
 
-  This is a simple client-server application for object detection.
-  
-  The server receives a video stream from the client through a websocket, processes it using YOLOv3, and returns the number of detected objects and their respective position for each frame.
+This is a simple client-server application for object detection.
+
+The server receives a video stream from the client through a websocket, processes it using YOLOv3, and returns the number of detected objects and their respective position for each frame.
 
 ## Requirements
 
@@ -47,7 +47,7 @@
    ```
 
 - `<host_ip>`: Host ip (default: 127.0.0.1)
-- `<host_port>`: Host port (default: 10050)
+- `<host_port>`: Host port (default: 8080)
 - `<object>`: Object to detect (default: person)
 - `<conf_thresh>`: Confidence threshold (default: 0.6)
 - `<nms_thresh>`: [Non-maximum suppression](https://www.tasq.ai/glossary/non-maximum-suppression/) threshold (default: 0.3)

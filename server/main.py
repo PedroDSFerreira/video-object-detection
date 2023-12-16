@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 from object_detection import detect_objects
 
-DEFAULT_PORT = 10050
+DEFAULT_PORT = 8080
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_CONF_THRESH = 0.6
 DEFAULT_NMS_THRESH = 0.3
