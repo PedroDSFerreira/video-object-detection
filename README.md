@@ -58,16 +58,12 @@ The server will start listening for incoming connections on the specified port.
 
 #### With Docker
 
-1. Pull the Docker image.
-
-   ```bash
-   docker pull pedrodsf/object-detection-server
-   ```
+1. Pull the [Docker image](https://github.com/PedroDSFerreira/video-object-detection/pkgs/container/object-detection-server).
 
 2. Run the Docker container.
 
    ```bash
-   docker run -p <host_port>:8080 pedrodsf/object-detection-server
+   docker run -p <host_port>:8080 ghcr.io/pedrodsferreira/object-detection-server
    ```
 
 ### Client
