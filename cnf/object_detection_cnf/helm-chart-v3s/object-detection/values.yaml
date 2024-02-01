@@ -1,0 +1,18 @@
+# Default values for object-detection.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+name: object-detection
+
+deployment:
+  image:
+    repository: ghcr.io/pedrodsferreira/object-detection-server:latest
+    # pull_secret: docker-hub-secret
+    pullPolicy: Always
+    containerPort: 8080
+
+service:
+  type: NodePort
+  port: 8080  # port exposed by the service
+  targetPort: 8080  # port on which the application is running inside the container
+  nodePort: 30100  # Usually between 30000-32767

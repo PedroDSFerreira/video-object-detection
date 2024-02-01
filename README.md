@@ -66,6 +66,23 @@ The server will start listening for incoming connections on the specified port.
    docker run -p <host_port>:8080 ghcr.io/pedrodsferreira/object-detection-server
    ```
 
+#### In OSM cluster
+
+If you want to run the server in an [OSM](https://osm.etsi.org/) cluster, after you already have the OSM cluster up and running, just run the following commands:
+
+For adding the packages to OSM:
+
+```bash
+osm nfpkg-create cnf/object_detection_cnf/
+osm nspkg-create cnf/object_detection_cnf_ns/
+```
+
+For running the server in the cluster:
+
+```bash
+osm ns-create --ns_name object_detection_cnf_ns --nsd_name object_detection_cnf_nsd --vim_account <cluster-vim-name-or-id>
+```
+
 ### Client
 
 1. Open a terminal and navigate to the client directory.
