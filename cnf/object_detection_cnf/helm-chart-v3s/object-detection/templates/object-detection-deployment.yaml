@@ -19,4 +19,4 @@ spec:
         image: {{ .Values.deployment.image.repository }}
         imagePullPolicy: {{ .Values.deployment.image.pullPolicy }}
         ports:
-        - containerPort: {{ .Values.deployment.containerPort }}
+        - containerPort: {{ .Values.deployment.targetPort }}
