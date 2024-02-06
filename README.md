@@ -31,7 +31,7 @@ The server receives a video stream from the client through a websocket, processe
 1. Open a terminal and navigate to the server directory.
 
    ```bash
-   cd video-object-detection/server
+   cd server
    ```
 
 2. Download the YOLOv3 model files and place them in the `yolo` directory.
@@ -43,7 +43,7 @@ The server receives a video stream from the client through a websocket, processe
 3. Run the server script.
 
    ```bash
-   python server.py --h <host_ip> --p <host_port> --o <object> --conf <conf_thresh> --nms <nms_thresh>
+   python main.py --h <host_ip> --p <host_port> --o <object> --conf <conf_thresh> --nms <nms_thresh>
    ```
 
 - `<host_ip>`: Host ip (default: 127.0.0.1)
@@ -88,13 +88,13 @@ osm ns-create --ns_name object_detection_cnf_ns --nsd_name object_detection_cnf_
 1. Open a terminal and navigate to the client directory.
 
    ```bash
-   cd app-demo/client
+   cd client
    ```
 
 2. Run the client script.
 
    ```bash
-   python client.py --h <host_ip> --p <host_port>
+   python main.py --h <host_ip> --p <host_port>
    ```
 
 The client will establish a connection with the server and start sending video frames. The server will process each frame and return the number of detected objects and positions to the client.
