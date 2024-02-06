@@ -9,7 +9,7 @@ deployment:
     repository: ghcr.io/pedrodsferreira/object-detection-server:latest
     # pull_secret: docker-hub-secret
     pullPolicy: Always
-    containerPort: 8080
+  containerPort: 8080
 
 service:
   type: NodePort
