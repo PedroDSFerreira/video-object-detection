@@ -68,7 +68,7 @@ The server will start listening for incoming connections on the specified port.
 
 #### In OSM cluster
 
-If you want to run the server in an [OSM](https://osm.etsi.org/) cluster, after you already have the OSM cluster up and running, just run the following commands:
+If you want to run the server in an [OSM](https://osm.etsi.org/) cluster, after you already have the [OSM cluster up and running](https://osm.etsi.org/docs/user-guide/latest/05-osm-usage.html#adding-kubernetes-cluster-to-osm), just run the following commands:
 
 For adding the packages to OSM:
 
